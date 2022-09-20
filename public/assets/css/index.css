@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+footer {
+    background-color: #4D6871;
+    padding: 100px;
+    color: whitesmoke;
+    margin-bottom: 0px;
+}
+
+h2 {
+    color: #4D6871;
+}
+
+.btn {
+    background-color: #43d38eff;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.abonne_description {
+    margin-bottom: 10px;
+}
+
+.inputs {
+    margin-top: 10px;
+}
+
+.email_abonné {
+    padding: 5px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+}
+
+.container_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    justify-items: auto;
+    background-color: #4D6871;
+    transition: all 0.5s;
+    z-index: 997;
+    top: 40px;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+}
+
+
+
+.navbar {
+    margin-top: 30px;
+}
+
+.logo {}
+
+.logo_img {
+    margin: 5px 5px 5px 5px;
+    width: 50%;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+
+.link_container {
+    margin-right: 100px;
+
+
+}
+
+.link {
+    margin-right: 20px;
+    color: whitesmoke;
+    font-weight: 200;
+
+}
+
+.longin_signup {
+    margin-right: 20px;
+
+}
+
+.longin {
+    margin-right: 10px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.signup {
+    margin-right: 10px;
+    color: #43d38eff;
+    font-weight: bold;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.social_media {
+    display: flex;
+    display: inline;
+
+}
+
+.media {
+    width: 30px;
+    margin: 10px;
+}
+
+.doctor_media {
+    width: 20px;
+
+}
+
+.section-title {
+    text-align: center;
+}
+
+
+
+.follow_us_on_socialmedia {
+    margin-top: 10px;
+}
+
+.account {
+    display: flex;
+    border: 1px solid black;
+    margin: 100px 0px 100px 25%;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px gray;
+}
+
+.input_account {
+    display: block;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: rgb(215, 212, 212);
+    border-radius: 5px;
+}
+
+.login_field {
+
+    padding: 50px;
+    margin: 0px;
+}
+
+.welcome_field {
+
+    padding: 50px;
+    margin: 0px;
+    background-color: #43d38eff;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#submit_accounnt {
+    margin: 20px 0px 0px 40px;
+}

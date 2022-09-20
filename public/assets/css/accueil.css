@@ -1,0 +1,74 @@
+.wrapper {
+    position: absolute;
+    bottom: -20px;
+    left: 60px;
+    display: flex;
+    width: 90%;
+    background-color: white;
+    padding: 7px;
+    justify-content: space-around;
+    text-align: center;
+
+
+
+
+}
+
+.decription {
+    background-color: white;
+}
+
+.wrapper_accueil {
+    background-color: rgb(45, 44, 44);
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    border: 1px solid #000;
+    width: 100%;
+    min-height: 843px;
+    padding: 25px;
+}
+
+
+#accueil {
+
+    position: relative;
+}
+
+.accueil-text {
+    position: absolute;
+    bottom: 50%;
+    left: 195px;
+    text-align: center;
+    border: 1px solid black;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+}
+
+#appoitment {
+    color: #43d38eff;
+}
+
+.description1 {
+    display: flex;
+    position: relative;
+}
+
+.apropos {
+    margin-top: 100px;
+    margin-right: 10px;
+}
+
+.news_content {
+    display: flex;
+}
+
+.forum_doctor_img {
+    display: flex;
+}
+
+.discussions {
+    display: flex;
+    justify-content: space-between;
+}
