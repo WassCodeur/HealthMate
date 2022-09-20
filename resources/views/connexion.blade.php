@@ -33,9 +33,9 @@
                 <div>
                     Ou utilisez vos informations personnelles
                 </div>
-                <form action="">
-                <input type="email" placeholder="email" class="input_account" required>
-                    <input type="password" placeholder="Password" class="input_account" required>
+                <form action="{{ route('forum') }}" method="GET">
+                <input type="email" placeholder="email" class="input_account" name="email" required>
+                    <input type="password" placeholder="Password" class="input_account" name="password" required>
                     <input type="submit" value="CONNEXION" class="btn"class="input_account" id="submit_accounnt">
                 </form>
                 <div class="forgetpassword">
