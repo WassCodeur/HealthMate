@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets\css\rendezvous.css">
     <link rel="stylesheet" href="assets\css\medecins.css">
     <link href="assets\css\bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets\fonts\fontawesome-free\css\all.min.css">
+    <link rel="icon" type="image/svg" sizes="16x16" href="assets\icons\medical-sign.svg">
     @yield('scripts')
 </head>
 <body>
@@ -15,30 +17,65 @@
 <div class="container_header">
     <div class="logo">
         <img src="assets\icons\medical-sign.svg" alt="logo" class="logo_img">
+        
     </div>
-    <div class="navbar">
+    <div class="navbar order-last order-lg-0">
     
         <span class="link_container">
-            <a href="/" class=link>Accueil</a>
-            <a href="#about" class=link>A propos</a>
-            <a href="#doctors" class=link>Nos médecins</a>
-            <a href="{{route('forum')}}" class=link>Forum</a>
-            <a href="{{ route('news') }}" class=link>News</a>
-            <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class=link>Pharmacies de gardes</a>
+            <a href="/" class="link  scrollto">Accueil</a>
+            <a href="#about" class=" link  scrollto">A propos</a>
+            <a href="#doctors" class="link rollto">Nos médecins</a>
+            <a href="{{route('forum')}}" class="link scrollto">Forum</a>
+            <a href="{{ route('news') }}" class="link scrollto">News</a>
+            <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
         </span>
         <span class="longin_signup">
-            <a href="{{ route('connexion') }}" class="longin">Se connecter</a>
-            <a href="{{ route('inscription') }}" class="signup">S'inscrire</a>
+            @yield('login')
         </span>
         
     </div>
-</div>
+    <nav class="menu_burger">
+                <div class="menu_contener">
+                    <ul>
+                        <li>
+                            <a href="/" class="link">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="###" class="link">
+                                A propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="###" class="link">
+                                Nos médecins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="###" class="link">
+                                Forum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="###" class="link">
+                                News
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+                <a href="##" class"burger"><i class="fa-solid fa-bars"></i></a>
+            </div>
+    </div>
+    
 </header>
     @yield('content')
 <footer>
     <div class="footer_content">
         <div class="logo">
-            <img src="assets\icons\medical-sign.svg" alt="logo" class="logo_img">
+            <img src="assets\icons\medical-sign.svg" alt="logo" class="logo_img">    
         </div>
         <div class="ressources">
             <div class="ressource_title">
@@ -77,18 +114,21 @@
                 ABONNEZ-VOUS
             </div>
             <div class="abonne_description">
-                <div>Facere recusandae, voluptates maiores corrupti  corporis 
-                <div>ratione mollitia voluptatibus optio libero</div>
+                <div>
+                    <p>
+                        Recevez nos dernières actualités et nos offres exclusives
+                    </p>
             </div>
-            <form action="" method="" class="inputs">
-                <input type="email" placeholder="email:" name="email_abonné" class="email_abonné" required>
-                <input type="submit" value="Abonner" class="btn">
+            <form action="{{ route('newsletter') }}" method="post" class="inputs newsletter">
+                @csrf
+                <input type="email" placeholder="email:" name="email" class="email_abonné" required>
+                <input type="submit" value="Abonner" class="btn_submit">
             </form>
             <div class="follow_us_on_socialmedia">
                 <div class="follow">
                     Suivez Nous
                 </div>
-                <div class="social_media">
+                <div class="social-links mt-3">
                     <a href="#" name="facebook"><img src="assets\images\facebook.png" alt="facebook" class="media"></a>
                     <a href="#" name="whatsapp"><img src="assets\images\whatsapp.png" alt="whatsapp" class="media"></a>
                     <a href="#" name="instagram"><img src="assets\images\instagram.png" alt="instagram" class="media"></a>
@@ -97,6 +137,7 @@
                 </div>
             </div>
         </div>
+        <span class="copyright">&copy; Copyright <strong >WassCodeur</strong>. All Rights Reserved </span>
     </div>
 </footer>
 </body>

@@ -9,6 +9,8 @@ body {
 
 }
 
+
+
 header {
     position: sticky;
     top: 0px;
@@ -22,11 +24,15 @@ footer {
     margin-bottom: 0px;
 }
 
+.copyright {
+    float: left;
+}
+
 h2 {
     color: #4D6871;
 }
 
-.btn {
+.btn_submit {
     background-color: #43d38eff;
     color: whitesmoke;
     padding: 5px;
@@ -78,7 +84,6 @@ h2 {
 
 a {
     text-decoration: none;
-
 }
 
 
@@ -92,11 +97,12 @@ a {
     margin-right: 20px;
     color: whitesmoke;
     font-weight: 200;
+    text-decoration: none;
 
 }
 
 .longin_signup {
-    margin-right: 20px;
+    margin-right: 10px;
 
 }
 
@@ -104,12 +110,14 @@ a {
     margin-right: 10px;
     color: whitesmoke;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .signup {
     margin-right: 10px;
     color: #43d38eff;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .footer_content {
@@ -134,6 +142,11 @@ a {
 
 }
 
+.apropo {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .section-title {
     text-align: center;
 }
@@ -146,7 +159,6 @@ a {
 
 .account {
     display: flex;
-    border: 1px solid black;
     margin: 100px 0px 100px 25%;
     width: 50%;
     border-radius: 10px;
@@ -169,7 +181,7 @@ a {
 
 .welcome_field {
 
-    padding: 50px;
+    padding: 5px;
     margin: 0px;
     background-color: #43d38eff;
     text-align: center;
@@ -179,4 +191,202 @@ a {
 
 #submit_accounnt {
     margin: 20px 0px 0px 40px;
+}
+
+.accueil_text {
+    margin-top: 50%;
+}
+
+.forum {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*Mobile*/
+@media (min-width: 300px) and (max-width: 600px) {
+    .logo_img {
+        width: 20%;
+    }
+
+    .wrapper {}
+
+    .accueil {}
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .discussions {}
+
+    .description1 {
+        display: block;
+
+
+    }
+
+    .wrapper_accueil {}
+
+    .accueil_text {
+        margin-top: 100%;
+    }
+
+    .container_header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-items: auto;
+        background-color: #4D6871;
+        transition: all 0.5s;
+        z-index: 997;
+        top: 40px;
+        box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+    }
+
+    footer {
+        padding: 50px;
+    }
+
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+}
+
+/*small screen*/
+@media (min-width: 300px) and (max-width: 900px) {
+    .logo_img {
+        width: 20%;
+    }
+
+    .wrapper {
+        visibility: hidden;
+    }
+
+    .wrapper_accueil {
+        height: 240px;
+        padding: 10px;
+
+
+    }
+
+    .accueil {}
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .discussions {}
+
+    .description1 {
+        display: block;
+    }
+
+    .navbar {
+        visibility: hidden;
+    }
+
+    .menu_burger {
+        visibility: visible;
+        border: 1px solid black;
+        background: red;
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .accueil-text {
+        top: 50px;
+        margin-right: 20%;
+    }
+
+    .account {
+        margin: 100px 0px 100px 50px;
+        width: 70%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+    }
+
+    .welcome_field {
+        display: none;
+    }
+
+    .login_field {
+
+        width: 100%;
+        margin: 0px;
+    }
+
+    .input_account {
+        display: block;
+        margin-top: 20px;
+        padding: 5px;
+        background-color: rgb(215, 212, 212);
+        border-radius: 5px;
+    }
+
+    header {
+        position: relative;
+    }
+}
+
+
+/*Tablet*/
+@media (min-width: 576px) and (max-width: 768px) {}
+
+
+/*laptop*/
+@media (min-width : 900px) and (max-width : 1800px) {
+    .menu_burger {
+        visibility: hidden;
+    }
+
+    .apropo {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .apropos_text {
+        width: 50%;
+        margin-top: 100px;
+    }
+
+    .news_content {
+        display: flex;
+    }
+}
+
+/*Desktop*/
+@media (min-width : 1800px) and (max-width : 3000px) {
+    .menu_burger {
+        visibility: hidden;
+    }
+
+    .apropo {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .apropos_text {
+        width: 50%;
+        margin-top: 100px;
+    }
+
+    .news_content {
+        display: flex;
+    }
+
+    .accueil-text {
+        left: 15%;
+        margin-right: 0%;
+    }
+
+    .account {
+        margin: 100px 0px 100px 25%;
+        width: 40%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px gray;
+    }
 }

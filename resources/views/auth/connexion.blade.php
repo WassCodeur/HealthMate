@@ -1,6 +1,7 @@
 @extends('layouts.template')
 
-@section('scripts')   
+@section('scripts')
+<title>Connexion</title>   
 @endsection
 
 @section('content')
@@ -33,10 +34,18 @@
                 <div>
                     Ou utilisez vos informations personnelles
                 </div>
-                <form action="{{ route('forum') }}" method="GET">
-                <input type="email" placeholder="email" class="input_account" name="email" required>
-                    <input type="password" placeholder="Password" class="input_account" name="password" required>
-                    <input type="submit" value="CONNEXION" class="btn"class="input_account" id="submit_accounnt">
+                <form action="{{ route('userlogin')}}" method="post">
+                    @if(Session::has('fail'))
+                    <div class="alert alert-danger">
+                        {{Session::get('fail')}}
+                    </div>
+                    @endif
+                    @csrf
+                    <input type="email" placeholder="email" name="email" class="input_account" value="{{old('email')}}" required>
+                    <span class="text-danger">@error('email') {{$message}} @enderror</span>
+                    <input type="password" placeholder="Password" name="password" class="input_account" required>
+                    <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                    <input type="submit" value="CONNEXION" class="btn_submit " id="submit_accounnt">
                 </form>
                 <div class="forgetpassword">
                     Mot de passe oublié ? <a href="#">Cliquez Ici</a>

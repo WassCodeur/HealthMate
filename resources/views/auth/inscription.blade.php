@@ -1,6 +1,7 @@
 @extends('layouts.template')
 
 @section('scripts')   
+<title>Inscription</title>   
 @endsection
 
 @section('content')
@@ -42,13 +43,30 @@
                 <div>
                     Ou utilisez vos informations personnelles
                 </div>
-            <form action=".\getapp.blade.php" method="post">
-                <input type="text" placeholder="Nom" required class="input_account">
-                    <input type="text" placeholder="Prénom" required class="input_account">
-                    <input type="email" placeholder="email" required class="input_account">
-                    <input type="password" placeholder="Password" required class="input_account">
-                    <input type="password" placeholder="Confirm" required class="input_account">
-                    <input type="submit" value="INSCRIPTION" class="btn" id="submit_accounnt">
+            <form action="{{ route('create')}}" method="post">
+            
+            @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{Session::get('success')}}
+            </div>
+            @endif
+            @if(Session::has('fail'))
+            <div class="alert alert-danger">
+                {{Session::get('fail')}}
+            </div>
+            @endif
+            @csrf
+                    <input type="text" placeholder="Nom" name="lastename" value="{{old('lastname')}}" required class="input_account">
+                    <span class="text-danger">@error('lastname') {{$message}} @enderror</span>
+                    <input type="text" placeholder="Prénom" name="firstname" value="{{old('firstname')}}" required class="input_account">
+                    <span class="text-danger">@error('firstname') {{$message}} @enderror</span>
+                    <input type="email" placeholder="email" name="email"  value="{{old('email')}}" required class="input_account">
+                    <span class="text-danger">@error('email') {{$message}} @enderror</span>
+                    <input type="password" placeholder="Password" name="password" required class="input_account">
+                    <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                    <input type="password" placeholder="Confirm" name="passwordcomfirm" required class="input_account">
+                    <span class="text-danger">@error('passwordcomfirm') {{$message}} @enderror</span>
+                    <input type="submit" value="INSCRIPTION" class="btn_submit" id="submit_accounnt">
                 </form>
             </div>
 
