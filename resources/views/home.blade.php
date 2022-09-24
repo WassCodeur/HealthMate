@@ -1,7 +1,19 @@
 @extends("layouts.template")
-@section("login")
-   <a href="{{route('logout')}}">Logout</a>
+
+@section('navbar')
+<span class="link_container">
+            <a href="{{ route('home') }}" class="link  scrollto">Accueil</a>
+            <a href="#about" class=" link  scrollto">A propos</a>
+            <a href="#doctors" class="link rollto">Nos médecins</a>
+            <a href="{{ route('forum') }}" class="link scrollto">Forum</a>
+            <a href="{{ route('actu') }}" class="link scrollto">News</a>
+            <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
+        </span>
+        <span class="longin_signup">
+            <a href="{{route('logout')}}">Logout</a>
+        </span>
 @endsection
+
 @section("scripts")
 <link rel="stylesheet" href="assets\css\accueil.css" >
 <title>Bienvenue</title>   
@@ -9,7 +21,7 @@
 @section("content")
 <section id = "accueil">
     <div class="accueil">
-        <div class="container-accueil">
+        <div class="container-accueil" >
             <div class="accueil-text section-title ">
                 <div >Le meilleur de la santé à portée de main</div>
                 <div>Prenez rendez-vous avec un médecin en ligne, consultez des articles de santé, posez vos questions sur le forum et plus encore.</div>
@@ -22,7 +34,7 @@
         <div class="wrapper_accueil" >
             
         </div>
-        <div class="wrapper" width="100%">
+        <div class="wrapper" width="100%" id='about'>
             <div class="photo_calendar">
                 <div class="icon">
                     <img src="assets\icons\medical-appointment.svg" alt="" width="50px">
@@ -61,7 +73,7 @@
                     <img src="assets\icons\medical-shop.svg" alt="" width="50px">
                 </div>
                 <h2 class="title">
-                    Pharmacies de garde
+                    Pharmacies
                 </h2>
                 <div class="text">
                     Trouvez les pharmacies de garde à Lomé
@@ -71,19 +83,20 @@
         
     </div>
 </section>
-<section class="decription">
+<section class="decription" >
     <div class="apropo">
-        <div class="img_doc1">
+        <div class="img_doc1" >
             <img src="assets\images\doctor1.png" alt="" width="100%">
         </div>
-        <div class="apropos_text" id='aproposdenoud'>
+        <div class="apropos_text" id='aproposdenoud' >
             HealthMate est une plateforme de santé en ligne qui vous permet de prendre rendez-vous avec un médecin en ligne, de consulter des articles de santé, de poser vos questions sur le forum et plus encore.
         </div>
     </div>
+    
 <!-- enddoctor -->
-<div class="container" data-aos="fade-up" >
+<div class="container" data-aos="fade-up"  id="doctors">
 
-<div class="section-title" id="doctors">
+<div class="section-title" >
     <h2>Nos Médecins</h2>
     <p class="nos_medecins">
         Nos médecins sont des professionnels de la santé qui ont reçu une formation médicale et qui sont autorisés à pratiquer la médecine. Ils sont spécialisés dans différents domaines de la médecine.

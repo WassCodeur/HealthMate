@@ -12,7 +12,7 @@ return [
      * The API key of a MailChimp account. You can find yours at
      * https://us10.admin.mailchimp.com/account/api-key-popup/.
      */
-    'apiKey' => env('b0940f1452104e9eaaf9ca89f0076118-us17'),
+    'apiKey' => env('MAILCHIMP_APIKEY'),
 
     /*
      * The listName to use when no listName has been specified in a method.
@@ -38,7 +38,8 @@ return [
              * how to get this value:
              * http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id.
              */
-            'id' => env('e3fb078996'),
+            'id' => env('MAILCHIMP_LIST_ID'),
+            
 
             /*
              * The GDPR marketing permissions of this audience.

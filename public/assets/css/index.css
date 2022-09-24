@@ -389,4 +389,8 @@ a {
         border-radius: 10px;
         box-shadow: 4px 4px 4px gray;
     }
+
+    .news_content {
+        margin: 100px 0px 100px 25%;
+    }
 }

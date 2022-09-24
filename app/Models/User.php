@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Sujet;
+
 
 
 class User extends Model
@@ -27,6 +30,9 @@ class User extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+    public function sujets()
+    {
+        return $this->hasMany(Sujet::class);
+    }
 
 }

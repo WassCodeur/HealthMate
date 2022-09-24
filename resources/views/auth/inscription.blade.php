@@ -4,6 +4,23 @@
 <title>Inscription</title>   
 @endsection
 
+@section('navbar')
+<span class="link_container">
+            <a href="/" class="link  scrollto">Accueil</a>
+            <a href="#about" class=" link  scrollto">A propos</a>
+            <a href="#doctors" class="link rollto">Nos médecins</a>
+            <a href="{{ route('connexion') }}" class="link scrollto">Forum</a>
+            <a href="{{ route('news') }}" class="link scrollto">News</a>
+            <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
+        </span>
+        <span class="longin_signup">
+            <a href="{{ route('connexion') }}" class="longin">Se connecter</a>
+            <a href="{{ route('inscription') }}" class="signup">S'inscrire</a>
+        </span>
+@endsection
+
+
+
 @section('content')
 <section class="inscription_container">
     <div class=" account">
@@ -56,7 +73,7 @@
             </div>
             @endif
             @csrf
-                    <input type="text" placeholder="Nom" name="lastename" value="{{old('lastname')}}" required class="input_account">
+                    <input type="text" placeholder="Nom" name="lastename" value="{{old('lastename')}}" required class="input_account">
                     <span class="text-danger">@error('lastname') {{$message}} @enderror</span>
                     <input type="text" placeholder="Prénom" name="firstname" value="{{old('firstname')}}" required class="input_account">
                     <span class="text-danger">@error('firstname') {{$message}} @enderror</span>

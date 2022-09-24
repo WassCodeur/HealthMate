@@ -20,19 +20,7 @@
         
     </div>
     <div class="navbar order-last order-lg-0">
-    
-        <span class="link_container">
-            <a href="/" class="link  scrollto">Accueil</a>
-            <a href="#about" class=" link  scrollto">A propos</a>
-            <a href="#doctors" class="link rollto">Nos médecins</a>
-            <a href="{{route('forum')}}" class="link scrollto">Forum</a>
-            <a href="{{ route('news') }}" class="link scrollto">News</a>
-            <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
-        </span>
-        <span class="longin_signup">
-            @yield('login')
-        </span>
-        
+         @yield('navbar')
     </div>
     <nav class="menu_burger">
                 <div class="menu_contener">

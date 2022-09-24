@@ -1,6 +1,7 @@
 @extends('layouts.template')
 
 @section('scripts')   
+
 @endsection
 
 @section('navbar')
