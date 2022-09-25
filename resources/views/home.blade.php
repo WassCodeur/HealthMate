@@ -12,13 +12,17 @@
         <span class="longin_signup">
             <a href="{{route('logout')}}">Logout</a>
         </span>
+        <span>
+            <a href="{{route('sujet.create')}}">Create</a>
+        </span>
 @endsection
 
 @section("scripts")
 <link rel="stylesheet" href="assets\css\accueil.css" >
 <title>Bienvenue</title>   
 @endsection
-@section("content")
+@section("content")div class="structure">
+
 <section id = "accueil">
     <div class="accueil">
         <div class="container-accueil" >

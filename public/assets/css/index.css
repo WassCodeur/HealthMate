@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'arial';
 }
 
 body {
@@ -7,6 +8,10 @@ body {
     margin: 0;
     padding: 0;
 
+}
+
+.post_btn {
+    background: #4D6871;
 }
 
 
@@ -99,6 +104,11 @@ a {
     font-weight: 200;
     text-decoration: none;
 
+}
+
+.link2 {
+    text-decoration: none;
+    color: #4D6871;
 }
 
 .longin_signup {
@@ -390,7 +400,5 @@ a {
         box-shadow: 4px 4px 4px gray;
     }
 
-    .news_content {
-        margin: 100px 0px 100px 25%;
-    }
+    .news_content {}
 }

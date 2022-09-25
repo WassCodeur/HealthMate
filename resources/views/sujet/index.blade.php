@@ -13,15 +13,40 @@
         </span>
 @endsection
 @section('content')
+
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section_title_container text-center">
+                    <div class="section_title"><h1>Forum</h1></div>
+                    <div class="section_subtitle"><p>Vous pouvez poster un sujet sur le forum</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section_title_container text-center">
+                    <div class="section_title"><h1>Les
+   </div>
+
+    <div class="container">
+    <div class="post_btn">
+        <a href="{{ route('sujet.create') }}" class=" btn-primary post_btn">Faire un post</a>
+    </div>
         <div class="list-group">
             @foreach($sujets as $sujet)
             <div class="card">
-                <h2>{{ $sujet->title }}</h2>
+                <h2><a href="{{ route('sujet.show', $sujet) }}" class="link2">{{ $sujet->title }}</a></h2>
                 <p>{{ $sujet->content}}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                    <small>posté le {{ $sujet->created_at->format('d/m/y à H:M') }}  </small>
-                    <span class="badge-primary">posté par {{ $sujet->user->firstname }}</span>
+                    <small>posté le {{ $sujet->created_at->format('d/m/y à H:m') }} par {{ $sujet->user->firstname }} </small>
+                    <a href="{{ route('sujet.show', $sujet->id) }}" class="btn btn-primary">Voir</a>
+                    <!-- <a href="{{ route('sujet.edit', $sujet->id) }}" class="btn btn-warning">Modifier</a>
+                    <form action="{{ route('sujet.destroy', $sujet->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form> -->
                 </div>
             </div>
             @endforeach

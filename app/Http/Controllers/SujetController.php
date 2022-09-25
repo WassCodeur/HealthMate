@@ -4,6 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Sujet;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+use App\Providers\RouteServiceProvider;
+use HomeControllers;
+use UserController;
 
 
 class SujetController extends Controller
@@ -14,10 +24,10 @@ class SujetController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth')->except(['index', 'show']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth')->except(['index', 'show']);
+    // }
   
     public function index()
     {
@@ -32,7 +42,7 @@ class SujetController extends Controller
      */
     public function create()
     {
-        return view('sujet.create');
+        return view('create');
     }
 
     /**
@@ -43,7 +53,23 @@ class SujetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $users = User::where('id', '=', session('LoggedUser'))->first();
+        $data = $request->validate([
+            'title' => 'required|min:5|max:255',
+            'content' => 'required|min:10',
+        ]);
+
+        $sujet = new Sujet();
+        $sujet->title = $data['title'];
+        $sujet->content = $data['content'];
+        $sujet->user_id = $users->id;
+        $post = $sujet->save();
+        if($post){
+            return redirect()->route('forum')->with('success', 'Votre sujet a bien été créé');
+        }else {
+            return back()->with('fail', 'Quelque chose s\'est mal passé');
+        }
+
     }
 
     /**
@@ -54,7 +80,7 @@ class SujetController extends Controller
      */
     public function show(Sujet $sujet)
     {
-        //
+        return view('sujet.show', compact('sujet'));
     }
 
     /**
