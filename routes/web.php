@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
-use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\NewsletterContoller;
 use App\http\controllers\SujetController;
+use App\Http\Controllers\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ Route::get('/home', [UserAuthController::class, 'home'])->name('home');
 //authentification
 Route::get('/logout', [UserAuthController::class, 'logout'])->name('logout');
 /*appoinment*/
-/*Route::get('/appointment', [AppointmentController::class, 'appointment'])->name('appointment');*/
+Route::post('/appointment', [AppointmentController::class, 'appointment'])->name('appointment');
 /*sujet*/
 Route::get('/forum', [SujetController::class, 'index'])->name('forum');
 Route::resource('sujet', SujetController::class)->except(['index']);

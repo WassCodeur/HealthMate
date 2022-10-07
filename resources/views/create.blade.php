@@ -12,6 +12,34 @@
     <link rel="icon" type="image/svg" sizes="16x16" href="assets\icons\medical-sign.svg">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .btn-annuler {
+                text-decoration: none;
+                border: 5px solid red;
+                background-color: #ff0000;
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                padding: 2px;
+                margin-top: 10px;
+
+            }
+            .btn-annuler:hover {
+                background-color: #ff0000;
+                color: white;
+                text-decoration: none;
+            }
+            .btn-post {
+                text-decoration: none;
+                border: 5px solid #43d38eff;
+                background-color: #43d38eff;
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                padding: 2px;
+                margin-top: 10px;
+            }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -29,7 +57,8 @@
             <textarea class="form-control" name="content" id="content" rows="5"></textarea>
             <span class="text-danger">@error('content') {{$message}} @enderror</span>
         </div>
-        <button type="submit" class="btn btn-primary">Poster</button>
+        <button type="submit" class="btn-post">Poster</button>
+        <a href="{{ route('forum') }}" class="btn-annuler">Annuler</a>
     
 </div>
 

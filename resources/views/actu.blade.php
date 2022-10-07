@@ -15,6 +15,45 @@
         </span>
 @endsection
 
+@section('menu_burger')
+
+<nav class="menu_burger">
+                <div class="menu_contener">
+                    <ul>
+                        <li>
+                            <a href="{{ route('home') }}" class="link">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bout" class="link">
+                                A propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doctors" class="link">
+                                Nos médecins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('forum') }}" class="link">
+                                Forum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('actu') }}" class="link">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('logout')}}" class="link-logout">Deconnexion</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+@endsection
+
 @section('content')
 
 <h1>News</h1>

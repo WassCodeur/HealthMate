@@ -3,6 +3,45 @@
     font-family: 'arial';
 }
 
+.link-logout {
+    text-decoration: none;
+    border: 5px solid red;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.link-logout:hover {
+    color: white;
+}
+
+.btn-create {
+    text-decoration: none;
+    border: 5px solid green;
+    background-color: #43d38eff;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.btn-create:hover {
+    color: white;
+}
+
+
+
+.btn-create-container {
+    margin: 20px;
+}
+
+.link:hover {
+    color: white;
+}
+
 body {
     height: 100%;
     margin: 0;
@@ -45,6 +84,10 @@ h2 {
     font-weight: bold;
     border: none;
     cursor: pointer;
+}
+
+li {
+    list-style-type: none;
 }
 
 .abonne_description {
@@ -119,15 +162,23 @@ a {
 .longin {
     margin-right: 10px;
     color: whitesmoke;
-    font-weight: bold;
+    font-weight: bolder;
     text-decoration: none;
+}
+
+.longin:hover {
+    color: #43d38eff;
 }
 
 .signup {
     margin-right: 10px;
     color: #43d38eff;
-    font-weight: bold;
+    font-weight: bolder;
     text-decoration: none;
+}
+
+.signup:hover {
+    color: whitesmoke;
 }
 
 .footer_content {
@@ -301,8 +352,7 @@ a {
 
     .menu_burger {
         visibility: visible;
-        border: 1px solid black;
-        background: red;
+        font-weight: bolder;
         width: 50%;
         margin-left: 25%;
     }
@@ -339,6 +389,16 @@ a {
 
     header {
         position: relative;
+    }
+
+    .link-logout {
+        text-decoration: none;
+        border: none;
+        color: rgb(50, 3, 3);
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 0px;
+
     }
 }
 

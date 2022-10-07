@@ -7,8 +7,6 @@
 @section('navbar')
 <span class="link_container">
             <a href="/" class="link  scrollto">Accueil</a>
-            <a href="#about" class=" link  scrollto">A propos</a>
-            <a href="#doctors" class="link rollto">Nos médecins</a>
             <a href="{{ route('connexion') }}" class="link scrollto">Forum</a>
             <a href="{{ route('news') }}" class="link scrollto">News</a>
             <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
@@ -17,6 +15,43 @@
             <a href="{{ route('connexion') }}" class="longin">Se connecter</a>
             <a href="{{ route('inscription') }}" class="signup">S'inscrire</a>
         </span>
+@endsection
+
+@section('menu_burger')
+
+<nav class="menu_burger">
+                <div class="menu_contener">
+                    <ul>
+                        <li>
+                            <a href="/" class="link">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('connexion') }}" class="link">
+                                Forum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="news" class="link">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('connexion') }}" class="longin">
+                                 Se connecter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('inscription') }}" class="signup">
+                                S'inscrire
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
 @endsection
 
 

@@ -9,29 +9,58 @@
             <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
         </span>
         <span class="longin_signup">
-          <a href="{{route('logout')}}">Logout</a>
+            <a href="{{route('logout')}}" class="link-logout">Deconnexion</a>
         </span>
 @endsection
+@section('menu_burger')
+
+<nav class="menu_burger">
+                <div class="menu_contener">
+                    <ul>
+                        <li>
+                            <a href="{{ route('home') }}" class="link">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bout" class="link">
+                                A propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doctors" class="link">
+                                Nos médecins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('forum') }}" class="link">
+                                Forum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('actu') }}" class="link">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('logout')}}" class="link-logout">Deconnexion</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+@endsection
+
+
+
+
 @section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section_title_container text-center">
-                    <div class="section_title"><h1>Forum</h1></div>
-                    <div class="section_subtitle"><p>Vous pouvez poster un sujet sur le forum</p></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section_title_container text-center">
-                    <div class="section_title"><h1>Les
-   </div>
+
 
     <div class="container">
-    <div class="post_btn">
-        <a href="{{ route('sujet.create') }}" class=" btn-primary post_btn">Faire un post</a>
+    <div class="btn-create-container">
+        <a href="{{ route('sujet.create') }}" class=" btn-create">Faire un post</a>
     </div>
         <div class="list-group">
             @foreach($sujets as $sujet)

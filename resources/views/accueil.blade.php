@@ -16,7 +16,53 @@
         <span class="longin_signup">
             <a href="{{ route('connexion') }}" class="longin">Se connecter</a>
             <a href="{{ route('inscription') }}" class="signup">S'inscrire</a>
-        </span>
+        </span>     
+@endsection
+@section('menu_burger')
+
+<nav class="menu_burger">
+                <div class="menu_contener">
+                    <ul>
+                        <li>
+                            <a href="/" class="link">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bout" class="link">
+                                A propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doctors" class="link">
+                                Nos médecins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('connexion') }}" class="link">
+                                Forum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="news" class="link">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('connexion') }}" class="longin">
+                                 Se connecter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('inscription') }}" class="signup">
+                                S'inscrire
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
 @endsection
 @section("scripts")
 <link rel="stylesheet" href="assets\css\accueil.css" >
@@ -227,7 +273,7 @@
             </div>
         </div>
     </div>
-    <div class="forum_doctor_img">
+    <!-- <div class="forum_doctor_img">
         <div class="forum">
             <div class="section-title">
             <h2 class="title">
@@ -279,7 +325,7 @@
         <!-- <div class="doctor2">
             <img src="assets\images\docteur_fille12.png" alt="docteur_fille12" width="100%">
         </div> -->
-    </div>
+    </div> -->
     
 </section>
 
@@ -294,8 +340,9 @@
                 </p>
             </div>
 
-            <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up"
+            <form action="{{ route('appointment')}}" method="post" role="form" class="php-email-form" data-aos="fade-up"
                 data-aos-delay="100">
+                @csrf
                 <div class="row">
                     <div class="col-md-4 form-group">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -335,11 +382,7 @@
                 <div class="form-group mt-3">
                     <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
                 </div>
-                <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-                </div>
+
                 <div class="text-center"><button type="submit" class="btn_submit">Make an Appointment</button></div>
             </form>
 

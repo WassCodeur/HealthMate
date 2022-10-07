@@ -11,7 +11,7 @@
             <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
         </span>
         <span class="longin_signup">
-          <a href="{{route('logout')}}">Logout</a>
+            <a href="{{route('logout')}}" class="link-logout">Deconnexion</a>
         </span>
 @endsection
 

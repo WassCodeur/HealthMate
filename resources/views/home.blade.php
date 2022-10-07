@@ -10,18 +10,54 @@
             <a href="https://www.lome-city.com/pharmacie-de-garde-lome/" class="link scrollto">Pharmacies de gardes</a>
         </span>
         <span class="longin_signup">
-            <a href="{{route('logout')}}">Logout</a>
+            <a href="{{route('logout')}}" class="link-logout">Deconnexion</a>
         </span>
-        <span>
-            <a href="{{route('sujet.create')}}">Create</a>
-        </span>
+
+@endsection
+@section('menu_burger')
+
+<nav class="menu_burger">
+                <div class="menu_contener">
+                    <ul>
+                        <li>
+                            <a href="{{ route('home') }}" class="link">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bout" class="link">
+                                A propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doctors" class="link">
+                                Nos médecins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('forum') }}" class="link">
+                                Forum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('actu') }}" class="link">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('logout')}}" class="link-logout">Deconnexion</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
 @endsection
 
 @section("scripts")
 <link rel="stylesheet" href="assets\css\accueil.css" >
 <title>Bienvenue</title>   
 @endsection
-@section("content")div class="structure">
+@section("content")
 
 <section id = "accueil">
     <div class="accueil">
@@ -228,7 +264,8 @@
             </div>
         </div>
     </div>
-    <div class="forum_doctor_img">
+
+    <!-- <div class="forum_doctor_img">
         <div class="forum">
             <div class="section-title">
             <h2 class="title">
@@ -277,10 +314,10 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="doctor2">
+        <div class="doctor2">
             <img src="assets\images\docteur_fille12.png" alt="docteur_fille12" width="100%">
-        </div> -->
-    </div>
+        </div>
+    </div> -->
     
 </section>
 
@@ -295,8 +332,10 @@
                 </p>
             </div>
 
-            <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up"
+            <form action="{{ route('appointment')}}" method="post" role="form" class="php-email-form" data-aos="fade-up"
                 data-aos-delay="100">
+
+                @csrf
                 <div class="row">
                     <div class="col-md-4 form-group">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -312,15 +351,15 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 form-group mt-3">
-                        <input type="datetime" name="date" class="form-control datepicker" id="date"
+                        <input type="date" name="date" class="form-control datepicker" id="date"
                             placeholder="Appointment Date" required>
                     </div>
                     <div class="col-md-4 form-group mt-3">
                         <select name="department" id="department" class="form-select">
                             <option value="">Select Department</option>
-                            <option value="Department 1">Department 1</option>
-                            <option value="Department 2">Department 2</option>
-                            <option value="Department 3">Department 3</option>
+                            <option value="Department 1">Médecine Interne</option>
+                            <option value="Department 2">Psychologie</option>
+                            <option value="Department 3">Génerale</option>
                         </select>
                     </div>
                     <div class="col-md-4 form-group mt-3">
@@ -336,14 +375,12 @@
                 <div class="form-group mt-3">
                     <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
                 </div>
-                <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-                </div>
+
+                
                 <div class="text-center"><button type="submit" class="btn_submit">Make an Appointment</button></div>
             </form>
 
         </div>
     </section><!-- End Appointment Section -->
 @endsection
+

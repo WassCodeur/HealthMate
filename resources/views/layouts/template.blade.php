@@ -22,40 +22,8 @@
     <div class="navbar order-last order-lg-0">
          @yield('navbar')
     </div>
-    <nav class="menu_burger">
-                <div class="menu_contener">
-                    <ul>
-                        <li>
-                            <a href="/" class="link">
-                                Accueil
-                            </a>
-                        </li>
-                        <li>
-                            <a href="###" class="link">
-                                A propos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="###" class="link">
-                                Nos médecins
-                            </a>
-                        </li>
-                        <li>
-                            <a href="###" class="link">
-                                Forum
-                            </a>
-                        </li>
-                        <li>
-                            <a href="###" class="link">
-                                News
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div>
-                <a href="##" class"burger"><i class="fa-solid fa-bars"></i></a>
-            </div>
+    @yield('menu_burger')
+
     </div>
     
 </header>
@@ -110,6 +78,7 @@
             <form action="{{ route('newsletter') }}" method="post" class="inputs newsletter">
                 @csrf
                 <input type="email" placeholder="email:" name="email" class="email_abonné" required>
+                <span class="text-danger">@error('email') {{$message}} @enderror</span>
                 <input type="submit" value="Abonner" class="btn_submit">
             </form>
             <div class="follow_us_on_socialmedia">
